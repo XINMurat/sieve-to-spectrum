@@ -1154,7 +1154,7 @@ Fonksiyon cisimlerinde C × C **iki boyutlu bir yüzeydir** — kesişim teorisi
 için gereken zenginlik oradadır. Sayılar cisminde karşılığı Spec ℤ'dir, ve
 şema kategorisinde:
 
-$$\operatorname{Spec}\mathbb{Z} \times \operatorname{Spec}\mathbb{Z} = \operatorname{Spec}\mathbb{Z}$$
+$$\mathrm{Spec}\ \mathbb{Z} \times \mathrm{Spec}\ \mathbb{Z} = \mathrm{Spec}\ \mathbb{Z}$$
 
 **Bir boyutlu.** Çarpım, boyutu artırmıyor. Weil'in ispatının yaşadığı iki
 boyutlu yüzey, sayılarda çöküp tek boyuta iniyor. Kesişim teorisi yapacak

@@ -1180,7 +1180,7 @@ Over function fields C × C is a **two-dimensional surface** — the richness
 needed for intersection theory is there. Over the number field the counterpart
 is Spec ℤ, and in the category of schemes:
 
-$$\operatorname{Spec}\mathbb{Z} \times \operatorname{Spec}\mathbb{Z} = \operatorname{Spec}\mathbb{Z}$$
+$$\mathrm{Spec}\ \mathbb{Z} \times \mathrm{Spec}\ \mathbb{Z} = \mathrm{Spec}\ \mathbb{Z}$$
 
 **One-dimensional.** The product does not increase the dimension. The
 two-dimensional surface on which Weil's proof lives collapses, over the numbers,
