@@ -35,7 +35,7 @@ d(n) ve temel özellikleri her elementer sayı teorisi ders kitabında bulunur.
 
 İki küme alalım:
 
-$$A = \{1, 2, 3, \dots, N\}, \qquad B = \{2, 3, 4, \dots, N\}$$
+$$A = \lbrace 1, 2, 3, \dots, N\rbrace, \qquad B = \lbrace 2, 3, 4, \dots, N\rbrace$$
 
 B, A'dan yalnız 1'in çıkarılmış hali. Şimdi ikisinin de kendisiyle çarpım
 tablosunu kuralım — yani N×N boyutunda, (i, j) hücresinde i·j yazan bir
@@ -45,7 +45,7 @@ Bir n sayısının A×A tablosunda kaç kez göründüğünü sayalım. Bu sayı
 iki çarpanın çarpımı olarak yazma yollarının sayısıdır — yani **bölen
 sayısı** d(n):
 
-$$f_A(n) = \#\{(i,j) : i\cdot j = n\} = d(n)$$
+$$f_A(n) = \bigl\lvert\lbrace (i,j) : i\cdot j = n\rbrace\bigr\rvert = d(n)$$
 
 B×B tablosunda ise 1 çarpan olarak kullanılamaz. n = 1·n ve n = n·1
 yazımları düşer:
@@ -61,7 +61,7 @@ $$f_B(p) = 2 - 2 = 0$$
 **Asallar B×B tablosunda hiç görünmez.** Bu, asallığın tanımının doğrudan
 tablo diline çevrilmiş hali. Buradan bir küme ifadesi çıkar:
 
-$$\{1,\dots,N\} \setminus \big(B\times B\big) = \{1\} \cup \{\text{asallar} \le N\}$$
+$$\lbrace 1,\dots,N\rbrace \setminus \big(B\times B\big) = \lbrace 1\rbrace \cup \lbrace \text{asallar} \le N\rbrace$$
 
 ### Doğrulama
 
@@ -125,7 +125,7 @@ yani farklı değer sayısı tam olarak N'dir. Sıfır bilgi.
 
 Kısıtsız halde ise:
 
-$$M(N) = \big|\{\,i\cdot j : i,j \le N\,\}\big|$$
+$$M(N) = \big|\lbrace i\cdot j : i,j \le N\rbrace\big|$$
 
 Bu, **Erdős'un 1955'te ortaya attığı çarpım tablosu problemidir** ve
 tablonun yoğunluk olarak boş olduğunu söyler: M(N) = o(N²). N² hücre var,
@@ -141,7 +141,7 @@ Oran düşüyor — ama kaplumbağa hızında. Sebebi Ford'un 2008'de bulduğu
 doğru mertebede saklı:
 
 $$
-M(N) = \Theta\!\left(\frac{N^2}{(\log N)^{c}\,(\log\log N)^{3/2}}\right), \qquad c = 1 - \frac{1+\log\log 2}{\log 2} \approx 0{,}086071
+M(N) = \Theta\left(\frac{N^2}{(\log N)^{c}(\log\log N)^{3/2}}\right), \qquad c = 1 - \frac{1+\log\log 2}{\log 2} \approx 0{,}086071
 $$
 
 Logaritmanın 0,086'ncı kuvveti. Sıfıra gidiş bu yüzden hissedilmiyor.
@@ -319,15 +319,15 @@ $$(a + ud)(a + vd) = a^2 + ad(u+v) + d^2uv$$
 
 Bunun a + md biçiminde olmasını istiyoruz:
 
-$$m = \frac{a^2 - a}{d} + a(u+v) + d\,uv$$
+$$m = \frac{a^2 - a}{d} + a(u+v) + duv$$
 
 m'nin tamsayı olması için bir **kapanış koşulu** gerekiyor:
 
-$$\boxed{\;d \mid a(a-1)\;}$$
+$$\boxed{d \mid a(a-1)}$$
 
 Bu koşul sağlandığında, bileşik terimlerin indeksi:
 
-$$\boxed{\;m = \frac{a(a-1)}{d} + a(u+v) + d\,uv, \qquad n = m+1\;}$$
+$$\boxed{m = \frac{a(a-1)}{d} + a(u+v) + duv, \qquad n = m+1}$$
 
 ### Doğrulama
 
@@ -593,7 +593,7 @@ değiştirdi — ve bu, bölümün geri kalanının konusu.
 Sınır eğrisinin altındaki kafes noktalarını sayalım. Her (i, j) hücresi,
 i·j sayısının bir bölen çiftidir. Dolayısıyla:
 
-$$\#\{(i,j) : ij \le N\} = \sum_{n \le N} d(n)$$
+$$\bigl\lvert\lbrace (i,j) : ij \le N\rbrace\bigr\rvert = \sum_{n \le N} d(n)$$
 
 Doğrulama, N = 355 için: hücre sayısı **2142**, Σd(n) = **2142**.
 
@@ -674,7 +674,7 @@ nicelikten çıkarırsak, geriye asalların toplamı kalır mı?
 
 Somut haliyle, birkaç aday vardı:
 
-$$R - U \quad\text{veya}\quad G^2 - U, \qquad U = \sum_{n\le N} n\,d(n),\; G = \tfrac{N(N+1)}{2}$$
+$$R - U \quad\text{veya}\quad G^2 - U, \qquad U = \sum_{n\le N} nd(n), G = \tfrac{N(N+1)}{2}$$
 
 Hedef: P = ∑_{p≤N} p. Umut, doğru katsayıyı bulunca farkın P'yi vermesiydi.
 
@@ -719,7 +719,7 @@ doğrusal kombinasyonu** yine bu mertebelerden birindedir. Ama P, N²/ln N
 mertebesindedir — içinde bir 1/ln N çarpanı vardır ve **bu çarpan hiçbir
 girdide yoktur**. Yoktan var edilemez.
 
-$$\text{span}\{N^4,\; N^2\ln N,\; N^2\} \not\ni \frac{N^2}{\ln N}$$
+$$\text{span}\lbrace N^4, N^2\ln N, N^2\rbrace \not\ni \frac{N^2}{\ln N}$$
 
 ### Lif diliyle: neden kaçınılmaz
 
@@ -797,7 +797,7 @@ işaretli birleşimidir.
 Küme kuramının "tekrar edeni bir kez göster" kuralının toplam formülündeki
 karşılığı **Möbius tersidir**. Bölen kafesindeki prototipi:
 
-$$\sum_{d \mid n} \mu(d) = [\,n = 1\,]$$
+$$\sum_{d \mid n} \mu(d) = [n = 1]$$
 
 Bu, "çok sayıda böleni tek bir gösterge bitine indirger" — tam olarak
 tekilleştirmenin cebirsel hali.
@@ -824,7 +824,7 @@ $$\ln\zeta(s) = \sum_p \sum_{k\ge1} \frac{p^{-ks}}{k} \quad(\text{asal kuvvetler
 
 Tekil asallara geçiş — yani "her asalı bir kez say" — Möbius tersiyle olur:
 
-$$\boxed{\;P(s) = \sum_p p^{-s} = \sum_{k\ge1} \frac{\mu(k)}{k}\ln\zeta(ks)\;}$$
+$$\boxed{P(s) = \sum_p p^{-s} = \sum_{k\ge1} \frac{\mu(k)}{k}\ln\zeta(ks)}$$
 
 Sayısal doğrulama:
 
@@ -987,7 +987,7 @@ kılıkta daha görünür.
 **Kılık 2 — kritik doğru parametresi.** Değere log n açısını verip
 e^{it·log n} = n^{it} yazarsak:
 
-$$\zeta(\tfrac12 + it) = \sum_n n^{-1/2}\,e^{-it\log n}$$
+$$\zeta(\tfrac12 + it) = \sum_n n^{-1/2}e^{-it\log n}$$
 
 Yani "çarpım tablosu + logaritma + trigonometrik değer" tam olarak zeta'nın
 **kritik doğrusudur**. Doğal bir sorunun cevabı: eksenlerde sin/cos olsaydı

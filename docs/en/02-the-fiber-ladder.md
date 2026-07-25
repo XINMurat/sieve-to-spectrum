@@ -38,7 +38,7 @@ throughout.
 Consider a map (function) μ. The **fiber** of a value n is the set of all inputs
 producing that value:
 
-$$\mu^{-1}(n) = \{\text{inputs} : \mu(\text{input}) = n\}$$
+$$\mu^{-1}(n) = \lbrace \text{inputs} : \mu(\text{input}) = n\rbrace$$
 
 In a multiplication table μ(i,j) = i·j, and the fiber of n is the set of
 solutions of n = i·j — the divisor pairs of n. Geometrically these are the
@@ -189,7 +189,7 @@ numerical support is extraordinary; there is no proof.
 Stop holding t fixed and make it **variable**. Now the object of interest is not
 a point set but the **zero locus of a function**:
 
-$$\text{the } t \text{ with } \zeta(\tfrac12 + it) = \sum_n \frac{1}{\sqrt n}\,e^{-it\log n} = 0$$
+$$\text{the } t \text{ with } \zeta(\tfrac12 + it) = \sum_n \frac{1}{\sqrt n}e^{-it\log n} = 0$$
 
 The notion of fiber changes category entirely here: from combinatorial ("how
 many divisor pairs") to analytic ("where it vanishes").

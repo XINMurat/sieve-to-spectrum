@@ -35,7 +35,7 @@ and its basic properties are in every elementary number-theory textbook.
 
 Take two sets:
 
-$$A = \{1, 2, 3, \dots, N\}, \qquad B = \{2, 3, 4, \dots, N\}$$
+$$A = \lbrace 1, 2, 3, \dots, N\rbrace, \qquad B = \lbrace 2, 3, 4, \dots, N\rbrace$$
 
 B is A with only 1 removed. Now form the multiplication table of each with
 itself — an N×N matrix with i·j in cell (i, j).
@@ -44,7 +44,7 @@ Count how many times a number n appears in the A×A table. This count is the
 number of ways to write n as a product of two factors — that is, the **divisor
 count** d(n):
 
-$$f_A(n) = \#\{(i,j) : i\cdot j = n\} = d(n)$$
+$$f_A(n) = \bigl\lvert\lbrace (i,j) : i\cdot j = n\rbrace\bigr\rvert = d(n)$$
 
 In the B×B table, 1 cannot be used as a factor. The writings n = 1·n and
 n = n·1 drop out:
@@ -61,7 +61,7 @@ $$f_B(p) = 2 - 2 = 0$$
 translated directly into the language of the table. From it a set statement
 follows:
 
-$$\{1,\dots,N\} \setminus \big(B\times B\big) = \{1\} \cup \{\text{primes} \le N\}$$
+$$\lbrace 1,\dots,N\rbrace \setminus \big(B\times B\big) = \lbrace 1\rbrace \cup \lbrace \text{primes} \le N\rbrace$$
 
 ### Verification
 
@@ -127,7 +127,7 @@ so the number of distinct values is exactly N. Zero information.
 
 Without the constraint:
 
-$$M(N) = \big|\{\,i\cdot j : i,j \le N\,\}\big|$$
+$$M(N) = \big|\lbrace i\cdot j : i,j \le N\rbrace\big|$$
 
 This is **Erdős's multiplication-table problem, posed in 1955**, and it says
 that the table is empty as a matter of density: M(N) = o(N²). There are N²
@@ -143,7 +143,7 @@ The ratio drops — but at a tortoise's pace. The reason is hidden in the correc
 order of magnitude found by Ford in 2008:
 
 $$
-M(N) = \Theta\!\left(\frac{N^2}{(\log N)^{c}\,(\log\log N)^{3/2}}\right), \qquad c = 1 - \frac{1+\log\log 2}{\log 2} \approx 0.086071
+M(N) = \Theta\left(\frac{N^2}{(\log N)^{c}(\log\log N)^{3/2}}\right), \qquad c = 1 - \frac{1+\log\log 2}{\log 2} \approx 0.086071
 $$
 
 The 0.086th power of the logarithm. That is why the approach to zero is
@@ -327,15 +327,15 @@ $$(a + ud)(a + vd) = a^2 + ad(u+v) + d^2uv$$
 
 We want this to be of the form a + md:
 
-$$m = \frac{a^2 - a}{d} + a(u+v) + d\,uv$$
+$$m = \frac{a^2 - a}{d} + a(u+v) + duv$$
 
 For m to be an integer a **closure condition** is required:
 
-$$\boxed{\;d \mid a(a-1)\;}$$
+$$\boxed{d \mid a(a-1)}$$
 
 When this condition holds, the index of the composite terms is:
 
-$$\boxed{\;m = \frac{a(a-1)}{d} + a(u+v) + d\,uv, \qquad n = m+1\;}$$
+$$\boxed{m = \frac{a(a-1)}{d} + a(u+v) + duv, \qquad n = m+1}$$
 
 ### Verification
 
@@ -605,7 +605,7 @@ vanish, it moved — and that is the subject of the rest of the section.
 Let us count the lattice points under the boundary curve. Each cell (i, j) is a
 divisor pair of i·j. Hence:
 
-$$\#\{(i,j) : ij \le N\} = \sum_{n \le N} d(n)$$
+$$\bigl\lvert\lbrace (i,j) : ij \le N\rbrace\bigr\rvert = \sum_{n \le N} d(n)$$
 
 Verification, for N = 355: number of cells **2142**, Σd(n) = **2142**.
 
@@ -687,7 +687,7 @@ computed quantity, does the sum of primes remain?
 
 Concretely, there were a few candidates:
 
-$$R - U \quad\text{or}\quad G^2 - U, \qquad U = \sum_{n\le N} n\,d(n),\; G = \tfrac{N(N+1)}{2}$$
+$$R - U \quad\text{or}\quad G^2 - U, \qquad U = \sum_{n\le N} nd(n), G = \tfrac{N(N+1)}{2}$$
 
 The target: P = ∑_{p≤N} p. The hope was that with the right coefficient the
 difference would give P.
@@ -733,7 +733,7 @@ combination** of these is again one of those orders. But P is of order N²/ln N 
 it contains a factor 1/ln N, and **that factor is in none of the inputs**. It
 cannot be created from nothing.
 
-$$\text{span}\{N^4,\; N^2\ln N,\; N^2\} \not\ni \frac{N^2}{\ln N}$$
+$$\text{span}\lbrace N^4, N^2\ln N, N^2\rbrace \not\ni \frac{N^2}{\ln N}$$
 
 ### In fiber language: why inevitable
 
@@ -811,7 +811,7 @@ signed combination of fibers.
 The counterpart, in the sum formula, of set theory's rule "show a repeat only
 once" is **Möbius inversion**. Its prototype on the divisor lattice:
 
-$$\sum_{d \mid n} \mu(d) = [\,n = 1\,]$$
+$$\sum_{d \mid n} \mu(d) = [n = 1]$$
 
 This "reduces many divisors to a single indicator bit" — exactly the algebraic
 form of deduplication.
@@ -840,7 +840,7 @@ $$\ln\zeta(s) = \sum_p \sum_{k\ge1} \frac{p^{-ks}}{k} \quad(\text{prime powers r
 The passage to distinct primes — i.e. "count each prime once" — is by Möbius
 inversion:
 
-$$\boxed{\;P(s) = \sum_p p^{-s} = \sum_{k\ge1} \frac{\mu(k)}{k}\ln\zeta(ks)\;}$$
+$$\boxed{P(s) = \sum_p p^{-s} = \sum_{k\ge1} \frac{\mu(k)}{k}\ln\zeta(ks)}$$
 
 Numerical check:
 
@@ -1006,7 +1006,7 @@ F(x), γ = 14.13, 21.02, … The imaginary parts of the zeros.
 **Guise 2 — critical-line parameter.** Give the value the angle log n and write
 e^{it·log n} = n^{it}:
 
-$$\zeta(\tfrac12 + it) = \sum_n n^{-1/2}\,e^{-it\log n}$$
+$$\zeta(\tfrac12 + it) = \sum_n n^{-1/2}e^{-it\log n}$$
 
 So "multiplication table + logarithm + trigonometric value" is exactly zeta's
 **critical line**. The answer to a natural question: what if the axes carried

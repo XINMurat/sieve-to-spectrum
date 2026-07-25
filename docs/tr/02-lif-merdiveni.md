@@ -36,7 +36,7 @@ için bir haritadır — **çözmek** için değil. Bu ayrım yazı boyunca koru
 Bir gönderim (fonksiyon) μ düşünün. Bir n değerinin **lifi**, o değeri veren
 tüm girdilerin kümesidir:
 
-$$\mu^{-1}(n) = \{\text{girdiler} : \mu(\text{girdi}) = n\}$$
+$$\mu^{-1}(n) = \lbrace \text{girdiler} : \mu(\text{girdi}) = n\rbrace$$
 
 Çarpım tablosunda μ(i,j) = i·j'dir, ve n'nin lifi n = i·j çözümleridir — yani
 n'nin bölen çiftleri. Geometrik olarak bu, i·j = n hiperbolü üzerindeki kafes
@@ -181,7 +181,7 @@ Sayısal destek olağanüstü; ispat yok.
 t'yi sabit tutmayı bırakıp **değişken** yapalım. Şimdi ilgilendiğimiz nesne
 bir nokta kümesi değil, bir **fonksiyonun sıfır yeri**:
 
-$$\zeta(\tfrac12 + it) = \sum_n \frac{1}{\sqrt n}\,e^{-it\log n} = 0 \text{ olan } t\text{'ler}$$
+$$\zeta(\tfrac12 + it) = \sum_n \frac{1}{\sqrt n}e^{-it\log n} = 0 \text{ olan } t\text{'ler}$$
 
 Lif kavramı burada tümüyle kategori değiştirir: kombinatoryal ("kaç bölen
 çifti") olmaktan çıkıp analitik ("nerede sıfırlanır") olur.
