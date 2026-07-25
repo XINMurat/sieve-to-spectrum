@@ -1,160 +1,169 @@
 # sieve-to-spectrum
 
-> 🌐 **Dil / Language:** **Türkçe** · [English](README.en.md)
+> 🌐 **Language / Dil:** **English** · [Türkçe](README.tr.md)
 
-## Bir Çarpım Tablosundan Riemann'ın Sıfırlarına
+## From a Multiplication Table to Riemann's Zeros
 
-*Eratosthenes eleğinden zeta spektrumuna: bir çarpım tablosunun asallar
-hakkında söyleyebileceklerinin haritası.*
+*From the sieve of Eratosthenes to the zeta spectrum: a map of what a
+multiplication table can say about the primes.*
 
-Bir çarpım tablosundan yola çıkıp, elementer adımlarla sayı teorisinin üç
-yüzyıllık ana hattını — Eratosthenes'ten Connes'a — yeniden türeten bir
-çalışmanın kaydı. Her adım kodla doğrulanmıştır; yol boyunca çürütülen
-hipotezler saklanmıştır.
+The record of a project that, starting from a multiplication table, re-derives
+by elementary steps the three-century main line of number theory — from
+Eratosthenes to Connes. Every step is verified in code; the hypotheses refuted
+along the way are kept.
 
-**Bu bir keşif iddiası değildir.** Anlatılan sonuçların hepsi biliniyor; en
-eskisi 1737 (Euler), en yenisi 2023 (Connes–Consani). Değer, sonuçlarda değil
-**yolda**: tek bir nesnenin bu kadar farklı klasik sonucu nasıl ürettiğinde,
-ve dürüst bir araştırmanın çürütmeleriyle birlikte nasıl ilerlediğinde.
+**This is not a claim of discovery.** All of the results recounted are known;
+the oldest is 1737 (Euler), the newest 2023 (Connes–Consani). The value is not
+in the results but in the **road**: how a single object produces so many
+different classical results, and how an honest investigation advances together
+with its refutations.
 
-## İki dilli yapı
+## Bilingual structure
 
-Bu depo Türkçe ve İngilizce olarak iki dillidir. Tüm anlatı metinleri her iki
-dilde de mevcuttur; her dosyanın başındaki bağlantıdan diğer dile geçebilirsiniz.
+This repository is bilingual, in Turkish and English. All narrative texts exist
+in both languages; the link at the top of each file switches to the other
+language.
 
 ```
-docs/tr/   Türkçe yazılar        docs/en/   İngilizce çeviriler
-audit/tr/  Türkçe denetim        audit/en/  İngilizce çeviri
-code/      doğrulama betikleri (dil-bağımsız; yorumlar Türkçe)
+docs/tr/   Turkish articles       docs/en/   English translations
+audit/tr/  Turkish audit          audit/en/  English translation
+code/      verification scripts (language-independent; comments in Turkish)
 ```
 
-- **Türkçe:** bu dosya · [`docs/tr/00-icindekiler.md`](docs/tr/00-icindekiler.md) — **buradan başlayın**
-- **English:** [README.en.md](README.en.md) · [`docs/en/00-contents.md`](docs/en/00-contents.md) — **start here**
+- **English:** this file · [`docs/en/00-contents.md`](docs/en/00-contents.md) — **start here**
+- **Türkçe:** [README.tr.md](README.tr.md) · [`docs/tr/00-icindekiler.md`](docs/tr/00-icindekiler.md) — **buradan başlayın**
 
-## Ne var burada
+## What is here
 
-### `docs/tr/` — Ana metinler (İngilizcesi `docs/en/`)
+### `docs/en/` — Main texts (Turkish in `docs/tr/`)
 
-| dosya | içerik |
+| file | content |
 |---|---|
-| `00-icindekiler.md` | Okuma haritası ve tüm yazıların özeti. **Buradan başlayın.** |
-| `01-carpim-tablosundan-riemann-sifirlarina.md` | Ana yazı, 9 bölüm. Çarpım tablosu → Sundaram → Dirichlet → Möbius → zeta sıfırları → Weil → Connes. İki çürütme bölümü içerir. |
-| `02-lif-merdiveni.md` | Yan yazı. Asallığın dört yüzü: bireysel (d(n)), konumsal (faz), ilişkisel (GUE), spektral (sıfırlar). |
-| `03-kiyas-ideasyon-raporu.md` | Kıyas metoduyla yeni-fikir taraması. Dört tohum, her biri illet + kırılma noktası + en ucuz çürütme + prior art ile. |
-| `04-deney-tohum4-goldbach-spektrum.md` | Kıyas Tohum 4'ün önkaydı ve sonucu. Önkayıt tuttu (toplama lifi zeta taşımıyor). |
-| `05-deney-tohum3-dirichlet-karakterleri.md` | Kıyas Tohum 3'ün önkaydı ve sonucu. §2 (a,d) genellemesi + §6 Möbius yapısı Dirichlet karakterlerine taşınıyor; döngüsel olmayan gruplar dahil. |
-| `06-deney-tohum2-farey-dik-lif.md` | Kıyas Tohum 2'nin önkaydı ve sonucu. Dik lif / Farey asalları görmüyor (gcd yapısı, asallık değil); bir konfaundun kontrol arıyla ayrıştırılması. |
-| `07-deney-tohum1-erdoskac-gue.md` | Kıyas Tohum 1'in önkaydı ve sonucu. Erdős–Kac ile GUE arasında yapısal köprü yok (farklı olasılık sınıfları); tamsayı-ızgara artefaktının elenmesi. |
-| `08-merdiveni-uzatmak.md` | Lif merdiveninin üretim kuralı. Beşinci basamak (operatör, Hilbert–Pólya) ve altıncı (aile, Katz–Sarnak) tek bir kategorileştirme kuralıyla türetiliyor. |
-| `09-yedinci-basamak-langlands.md` | Yedinci basamak: aileleri üreten birleştirici çatı — motifler ve Langlands programı. Merdivenin §8 (Weil) ile döngüye kapanışı. |
-| `10-anlama-ve-cozum.md` | Kapanış. Anlama aracının açık problemlere katkısı (doğrudan/dolaylı/metodolojik) ve merdivenin kendi prior art'ı (Korzybski, Bret Victor, L-fonksiyonu hiyerarşisi). |
+| `00-contents.md` | Reading map and a summary of all writings. **Start here.** |
+| `01-from-multiplication-table-to-riemann-zeros.md` | The main article, 9 sections. Multiplication table → Sundaram → Dirichlet → Möbius → zeta zeros → Weil → Connes. Contains two refutation sections. |
+| `02-the-fiber-ladder.md` | Side article. The four faces of primality: individual (d(n)), positional (phase), relational (GUE), spectral (zeros). |
+| `03-kiyas-ideation-report.md` | A new-idea scan by the Kıyas method. Four seeds, each with cause + breaking point + cheapest refutation + prior art. |
+| `04-experiment-seed4-goldbach-spectrum.md` | The preregistration and result of Kıyas Seed 4. Preregistration held (the additive fiber carries no zeta). |
+| `05-experiment-seed3-dirichlet-characters.md` | The preregistration and result of Kıyas Seed 3. The §2 (a,d) generalization + §6 Möbius structure carry over to Dirichlet characters; including non-cyclic groups. |
+| `06-experiment-seed2-farey-orthogonal-fiber.md` | The preregistration and result of Kıyas Seed 2. The orthogonal fiber / Farey does not see the primes (gcd structure, not primality); isolating a confound with a control run. |
+| `07-experiment-seed1-erdos-kac-gue.md` | The preregistration and result of Kıyas Seed 1. No structural bridge between Erdős–Kac and GUE (different probability classes); eliminating the integer-lattice artifact. |
+| `08-extending-the-ladder.md` | The generating rule of the fiber ladder. The fifth rung (operator, Hilbert–Pólya) and the sixth (family, Katz–Sarnak) derived by a single categorification rule. |
+| `09-seventh-rung-langlands.md` | The seventh rung: the unifying framework generating the families — motives and the Langlands program. The ladder's loop-closure with §8 (Weil). |
+| `10-understanding-and-solution.md` | Closing. An understanding tool's contribution to open problems (direct/indirect/methodological) and the ladder's own prior art (Korzybski, Bret Victor, the L-function hierarchy). |
 
-**Merdiven serisi (02, 08, 09):** Asallığın yedi soyutlama basamağı, tek bir
-üretim kuralıyla — "bu nesneyi ne üretir?" — d(n)'den Langlands'a. Basamaklar:
-çarpım → faz → torus/GUE → sıfır kümesi → operatör (Hilbert–Pólya) → aile
-(Katz–Sarnak) → Langlands çatısı. Her biri yerleşik bir matematik programına
-denk; hiçbiri RH'yi çözmez, hepsi aynı fonksiyon-cismi/sayı-cismi uçurumuna
-çarpar.
+**The ladder series (02, 08, 09):** The seven abstraction rungs of primality, by
+a single generating rule — "what generates this object?" — from d(n) to
+Langlands. The rungs: product → phase → torus/GUE → zero set → operator
+(Hilbert–Pólya) → family (Katz–Sarnak) → the Langlands framework. Each coincides
+with an established mathematical program; none solves RH; all hit the same
+function-field/number-field chasm.
 
-### `audit/tr/` — Denetim (İngilizcesi `audit/en/`)
+### `audit/en/` — Audit (Turkish in `audit/tr/`)
 
-| dosya | içerik |
+| file | content |
 |---|---|
-| `mizan-denetim.md` | Mizan metoduyla iddia denetimi. 14 iddia, kanıt katmanlarıyla; dört öz-düzeltme append edilmiş. |
+| `mizan-audit.md` | A claim audit by the Mizan method. 14 claims with evidence tiers; four self-corrections appended. |
 
-### `code/` — Doğrulama betikleri
+### `code/` — Verification scripts
 
-Her betik bir bölüme eşlenir (`sNN_` öneki) ya da bir yan yazıya. Hepsi
-bağımsız çalışır; gereken: `numpy`, `sympy`, `mpmath`, `scipy`. (Kod
-yorumları Türkçedir; dosya adları her iki dildeki yazılarda ortaktır.)
+Each script maps to a section (`sNN_` prefix) or to a side article. All run
+independently; required: `numpy`, `sympy`, `mpmath`, `scipy`. (Code comments are
+in Turkish; the file names are shared across both languages' texts. The prefix
+`tohum` means "seed.")
 
 ```
-s01_carpim_tablosu_asallik.py    K(n)=0 <=> n asal, n<5000
-s01_rank1_teshis.py              tablo rank 1, toplamlar polinom
+s01_carpim_tablosu_asallik.py    K(n)=0 <=> n prime, n<5000
+s01_rank1_teshis.py              table has rank 1, sums are polynomials
 s02_aritmetik_dizi_genelleme.py  m = a(a-1)/d + a(u+v) + duv, Sundaram
-s03_seri_toplam_transpoze.py     S-1 = 2P, "2" transpoze simetrisi
-s03_teleskopik_fark.py           F(M)-F(M-1) = M <=> M asal
-s04_hiperbol_erdos_denklik.py    hiperbol ölçütü = Erdős çarpım tablosu
-s05_mertebe_argumani.py          N^2 ln N vs N^2/ln N, tek fark yetmez
-s06_mobius_tersi.py              Λ = μ*log doğrulaması
+s03_seri_toplam_transpoze.py     S-1 = 2P, the "2" is transpose symmetry
+s03_teleskopik_fark.py           F(M)-F(M-1) = M <=> M prime
+s04_hiperbol_erdos_denklik.py    hyperbola criterion = Erdős multiplication table
+s05_mertebe_argumani.py          N^2 ln N vs N^2/ln N, a single difference fails
+s06_mobius_tersi.py              Λ = μ*log verification
 s06_asal_zeta.py                 P(s) = Σ μ(k)/k log ζ(ks)
-s06_normalizasyon_uc_yol.py      log n / log n·d / Λ üç normalizasyon
-s07_zeta_sifir_spektrum.py       F(x) spektrumu → ilk 6 zeta sıfırı
-s07_theta_korlugu.py             spektrum Re(ρ)'ya kör
-lifmerdiveni_dort_basamak.py     dört lif türü, okudukları özellik
-lifmerdiveni_faz_torus_sifir.py  trigonometrik yapıda lif türleri
-lifmerdiveni_dogrulamalar.py     Erdős-Kac, Weyl, GUE aralık istatistiği
-erdos_mtable_hesap.py            M(N) tam + Monte Carlo, Ford oranı
-tohum4_goldbach_spektrum.py      Goldbach lifi spektrumu (negatif sonuç)
-tohum4_carpim_karsilastirma.py   çarpım vs toplama lif, tepe/taban oranı
-tohum3_mobius_karakter.py        Möbius formülü karakterlere taşınır mı
-tohum3_ad_karakter_ortalamasi.py (a,d) sınıf zeta = karakter ortalaması
-tohum2_farey_asal_imza.py        Farey/dik lif asalları görmez (konfaund kontrollü)
-tohum1_erdoskac_gue.py           Erdős–Kac vs GUE, farklı olasılık sınıfları
+s06_normalizasyon_uc_yol.py      log n / log n·d / Λ, three normalizations
+s07_zeta_sifir_spektrum.py       spectrum of F(x) → first 6 zeta zeros
+s07_theta_korlugu.py             spectrum is blind to Re(ρ)
+lifmerdiveni_dort_basamak.py     four fiber types, the property each reads
+lifmerdiveni_faz_torus_sifir.py  fiber types in the trigonometric setting
+lifmerdiveni_dogrulamalar.py     Erdős-Kac, Weyl, GUE spacing statistics
+erdos_mtable_hesap.py            M(N) exact + Monte Carlo, the Ford ratio
+tohum4_goldbach_spektrum.py      spectrum of the Goldbach fiber (negative result)
+tohum4_carpim_karsilastirma.py   product vs additive fiber, peak/floor ratio
+tohum3_mobius_karakter.py        does the Möbius formula carry to characters
+tohum3_ad_karakter_ortalamasi.py (a,d) class zeta = character average
+tohum2_farey_asal_imza.py        Farey/orthogonal fiber does not see primes (confound-controlled)
+tohum1_erdoskac_gue.py           Erdős–Kac vs GUE, different probability classes
 ```
 
-## Süreç: nasıl ilerledi
+## Process: how it advanced
 
-Bu çalışma bir sohbet olarak gelişti. Metodolojik omurgası iki araçtı:
+This work developed as a conversation. Its methodological backbone was two tools:
 
-- **Mizan** (denetim): her iddiayı kanıt katmanına ayır, prior art ara,
-  çürütülebilir kur. `audit/tr/mizan-denetim.md`.
-- **Kıyas** (ideasyon): yeni fikirleri illet + kırılma noktası + en ucuz
-  çürütme + prior art ile üret. `docs/tr/03-...`.
+- **Mizan** (audit): split each claim into evidence tiers, search for prior art,
+  make it refutable. `audit/en/mizan-audit.md`.
+- **Kıyas** (ideation): produce new ideas with cause + breaking point + cheapest
+  refutation + prior art. `docs/en/03-...`.
 
-### Çürütülen hipotezler (yolun yarısı)
+### Refuted hypotheses (half the road)
 
-Hipotezler veriyle çürütüldü ve saklandı — çünkü asıl öğretici olan bunlar:
+The hypotheses were refuted by data and kept — because these are what really
+teach:
 
-1. Frekansa bölme → Gauss toplamına çöktü (asal bilgisi taşımaz)
-2. "Aralarında asallik" → 14 testte 14 ret
-3. Goldbach "2" katsayısı → transpoze simetrisi, toplamsal değil
-4. Tek fark testi → mertebe uyuşmazlığı (N² ln N vs N²/ln N)
-5. Goldbach lif spektrumu → toplama lifi zeta taşımaz (Kıyas Tohum 4, önkayıtla)
-6. Dik lif / Farey → asalları görmez, yalnız gcd yapısı (Kıyas Tohum 2)
+1. Division by frequency → collapsed to a Gauss sum (carries no prime info)
+2. "Coprimality" → 14 rejections in 14 tests
+3. The Goldbach "2" coefficient → transpose symmetry, not additive
+4. The single-difference test → order mismatch (N² ln N vs N²/ln N)
+5. The Goldbach fiber spectrum → the additive fiber carries no zeta (Kıyas Seed
+   4, preregistered)
+6. The orthogonal fiber / Farey → does not see the primes, only gcd structure
+   (Kıyas Seed 2)
 
-Kıyas'ın dört tohumunun dördü de test edildi: Tohum 3 pozitif (karakterlere
-taşınır — iç tutarlılık), Tohum 1, 2, 4 negatif. Üç negatif birlikte kurgunun
-sınırını çizer: asalları gören gönderim çarpımsal olmalı (toplama i+j ve oran
-i/j görmez), ve ω(n)'in dağılım sınıfı GUE'den ayrıdır. Her biri önkayıt-önce
-disipliniyle; deney dosyaları `docs/tr/04–07`.
+All four Kıyas seeds were tested: Seed 3 positive (carries over to characters —
+internal consistency), Seeds 1, 2, 4 negative. The three negatives together draw
+the boundary of the construction: a map that sees the primes must be
+multiplicative (addition i+j and ratio i/j do not see them), and the
+distribution class of ω(n) is distinct from GUE. Each under a preregister-first
+discipline; the experiment files are `docs/en/04–07`.
 
-### Yeniden türetilen klasik sonuçlar
+### Re-derived classical results
 
-Sundaram eleği (1934), Dirichlet bölen problemi (1849), Landau k-almost prime
-(1900), Euler çarpımı (1737), Möbius tersi, Riemann açık formülü (1859), Erdős
-çarpım tablosu problemi (1955, Ford 2008), Montgomery–GUE (1973), ve
-Connes–Consani aritmetik sitesi (2014) — hepsi tek bir çarpım tablosundan.
+The Sundaram sieve (1934), the Dirichlet divisor problem (1849), Landau
+k-almost-prime (1900), the Euler product (1737), Möbius inversion, Riemann's
+explicit formula (1859), the Erdős multiplication-table problem (1955, Ford
+2008), Montgomery–GUE (1973), and the Connes–Consani arithmetic site (2014) — all
+from a single multiplication table.
 
-### Ana ölçüt
+### The main criterion
 
-Yazı boyunca tek bir soru her şeyi bir arada tuttu:
+Throughout, a single question held everything together:
 
-> **Toplam mı okuyorsun, lif mi?**
+> **Are you reading the sum, or the fiber?**
 
-Tablo rank 1'dir; her doğrusal fonksiyoneli (satır, sütun, köşegen, toplam)
-N'in polinomudur ve asal bilgisi taşımaz. Aritmetik, (i,j) ↦ i·j
-gönderiminin *liflerinde* saklıdır. Toplam okuyan her deneme çöktü; lif okuyan
-denemeler çalıştı.
+The table has rank 1; every linear functional of it (row, column, diagonal, sum)
+is a polynomial in N and carries no prime information. Arithmetic hides in the
+*fibers* of the map (i,j) ↦ i·j. Every attempt reading a sum collapsed; the
+attempts reading a fiber worked.
 
-## Dürüstlük kaydı
+## Honesty record
 
-Bu çalışmada yeni bir teorem iddiası **yoktur** — ve olmaması, çalışmanın en
-güçlü yanıdır. Süreç boyunca:
+There is **no** claim of a new theorem in this work — and that absence is its
+greatest strength. Throughout the process:
 
-- 5 hipotez çürütüldü, hiçbiri savunulmadı
-- 4 kez yazarın kendi fazla-güçlü iddiası düzeltildi (denetim dosyasında
-  append olarak kayıtlı)
-- 7 ayrı prior-art araması yapıldı; her "yeni" bulgu literatüre bağlandı
+- 5 hypotheses refuted, none defended
+- 4 times the author's own too-strong claim was corrected (recorded as appends in
+  the audit file)
+- 7 separate prior-art searches; every "new" finding tied back to the literature
 
-## Çalıştırma
+## Running
 
 ```bash
 pip install numpy sympy mpmath scipy
-python code/s07_zeta_sifir_spektrum.py    # en çarpıcı: sıfırları okur
-python code/tohum4_goldbach_spektrum.py   # negatif sonuç, önkayıtla
+python code/s07_zeta_sifir_spektrum.py    # most striking: reads the zeros
+python code/tohum4_goldbach_spektrum.py   # negative result, preregistered
 ```
 
-## Lisans
+## License
 
-İçerik ve kod açık; atıf yeterli. Ayrıntı için [LICENSE](LICENSE).
+The content and code are open; attribution suffices. See [LICENSE](LICENSE) for
+details.
