@@ -100,10 +100,19 @@ tohum1_erdoskac_gue.py           Erdős–Kac vs GUE, different probability clas
 
 This work developed as a conversation. Its methodological backbone was two tools:
 
-- **Mizan** (audit): split each claim into evidence tiers, search for prior art,
-  make it refutable. `audit/en/mizan-audit.md`.
-- **Kıyas** (ideation): produce new ideas with cause + breaking point + cheapest
-  refutation + prior art. `docs/en/03-...`.
+- **[Mizan](https://github.com/XINMurat/Mizan)** (audit): split each claim into
+  evidence tiers, search for prior art, make it refutable.
+  `audit/en/mizan-audit.md`.
+- **[Kıyas](https://github.com/XINMurat/Kiyas)** (ideation): produce new ideas
+  with cause + breaking point + cheapest refutation + prior art.
+  `docs/en/03-...`.
+
+Both are open-source Claude skills. This repository is the closest thing they
+have to a **field test**: the seeds were preregistered before they were run,
+three of the four came back negative, and the negatives are still here. A
+methodology that only ever appears in its own examples has not been tested —
+so what this repo mainly demonstrates is the discipline surviving contact with
+a real problem, including the part where it says no.
 
 ### Refuted hypotheses (half the road)
 

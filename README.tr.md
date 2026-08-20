@@ -97,10 +97,17 @@ tohum1_erdoskac_gue.py           Erdős–Kac vs GUE, farklı olasılık sınıf
 
 Bu çalışma bir sohbet olarak gelişti. Metodolojik omurgası iki araçtı:
 
-- **Mizan** (denetim): her iddiayı kanıt katmanına ayır, prior art ara,
-  çürütülebilir kur. `audit/tr/mizan-denetim.md`.
-- **Kıyas** (ideasyon): yeni fikirleri illet + kırılma noktası + en ucuz
-  çürütme + prior art ile üret. `docs/tr/03-...`.
+- **[Mizan](https://github.com/XINMurat/Mizan)** (denetim): her iddiayı kanıt
+  katmanına ayır, prior art ara, çürütülebilir kur. `audit/tr/mizan-denetim.md`.
+- **[Kıyas](https://github.com/XINMurat/Kiyas)** (ideasyon): yeni fikirleri
+  illet + kırılma noktası + en ucuz çürütme + prior art ile üret.
+  `docs/tr/03-...`.
+
+İkisi de açık kaynak Claude skill'i. Bu depo, onların sahip olduğu **saha
+testine en yakın şey**: tohumlar koşulmadan önce önkayıt edildi, dördün üçü
+negatif döndü, ve negatifler hâlâ burada. Yalnızca kendi örneklerinde görünen
+bir metodoloji sınanmış sayılmaz — bu deponun asıl gösterdiği şey, disiplinin
+gerçek bir problemle temasta ayakta kalması, hayır dediği kısım dahil.
 
 ### Çürütülen hipotezler (yolun yarısı)
 
